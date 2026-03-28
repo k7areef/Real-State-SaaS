@@ -97,6 +97,11 @@ function LoginPage() {
                             isSubmitting
                         }) => (
                             <form onSubmit={handleSubmit}>
+                                {/* Form Header */}
+                                <div className="form-header mb-10">
+                                    <h2 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold mb-3">تسجيل الدخول</h2>
+                                    <p className="text-sm sm:text-base md:text-lg lg:text-lg text-text">مرحباً بك مجدداً في العقار الرقمي الأكثر تميزاً</p>
+                                </div>
                                 {/* Fileds */}
                                 <div className="fields mb-5 space-y-3">
                                     {fields.map((field, index) => (<FormikField

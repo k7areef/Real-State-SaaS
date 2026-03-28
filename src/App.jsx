@@ -15,7 +15,7 @@ import AdminDashboardLayout from "@layouts/AdminDashboardLayout";
 
 function App() {
   return (
-    <div className="App bg-background min-h-screen">
+    <div className="App bg-background text-secondary min-h-screen">
       <Routes>
         {/* Main Layout */}
         <Route path="/" element={<MainLayout />}>
