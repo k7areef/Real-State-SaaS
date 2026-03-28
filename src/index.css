@@ -8,13 +8,20 @@
 }
 
 @theme {
-  /* Colors Here */
+  /* Colors */
+  --color-primary: #3664ef;
+  --color-secondary: #10172b;
+  --color-success: #3eb97f;
+  --color-background: #f8fafc;
 }
 
 /* Global */
 html,
 body {
-  /* GLobal Styles Here */
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 button {
