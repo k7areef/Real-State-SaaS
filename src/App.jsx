@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 // Pages:
 // # Main Pages:
 import HomePage from "@pages/main/HomePage";
@@ -9,7 +10,8 @@ import SignupPage from "@pages/auth/SignupPage";
 // Layouts
 import MainLayout from "@layouts/MainLayout";
 import AuthLayout from "@layouts/AuthLayout";
-import DashboardLayout from "@layouts/DashboardLayout";
+import HostDashboardLayout from "@layouts/HostDashboardLayout";
+import AdminDashboardLayout from "@layouts/AdminDashboardLayout";
 
 function App() {
   return (
@@ -25,11 +27,17 @@ function App() {
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
         </Route>
-        {/* Dashboard Layout */}
-        <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route index element={<>properties</>} />
+        {/* Host Dashboard Layout */}
+        <Route path="/dashboard" element={<HostDashboardLayout />}>
+          <Route index element={<>Host Dashboard</>} />
+        </Route>
+        {/* Admin Dashboard Layout */}
+        <Route path="/admin" element={<AdminDashboardLayout />}>
+          <Route index element={<>Admin Dashboard</>} />
         </Route>
       </Routes>
+      {/*  Toaster */}
+      <Toaster />
     </div>
   )
 }

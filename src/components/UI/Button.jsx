@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
  * @property {string} [type]
  * @property {string} [className]
  * @property {React.ReactNode} children
- * @property {'primary' | 'secondary'} [variant]
+ * @property {'primary' | 'secondary' | 'ghostOutline'} [variant]
  * @property {React.ButtonHTMLAttributes<HTMLButtonElement> | import("react-router-dom").LinkProps} [props]
  */
 
@@ -19,8 +19,9 @@ import { Link } from "react-router-dom";
 function Button({ variant = "primary", to, href, type, className, children }) {
 
     const variants = {
-        primary: "",
-        secondary: ""
+        primary: "bg-primary text-white sm:hover:bg-primary/90",
+        secondary: "bg-secondary text-white sm:hover:bg-secondary/90",
+        ghostOutline: "border border-grey hover:border-gray-300 sm:hover:bg-gray-100"
     }
 
     const classNames = `px-4 py-2 sm:py-3 rounded-md font-semibold transition duration-300 ease-in-out ${variants[variant]}${className ? ` ${className}` : ""}`;

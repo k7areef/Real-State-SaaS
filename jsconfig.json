@@ -13,6 +13,9 @@
       ],
       "@layouts/*": [
         "layouts/*"
+      ],
+      "@utils/*": [
+        "utils/*"
       ]
     }
   }
