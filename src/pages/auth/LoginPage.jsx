@@ -1,15 +1,14 @@
+import React from "react";
 import Button from "@components/UI/Button";
 import FormikField from "@components/UI/FormikField";
 import { Formik } from "formik";
-import React from "react";
 import * as Yup from "yup";
-import GoogleImage from "@assets/icons/google.png";
-import AppleImage from "@assets/icons/apple.png";
 import { supabase } from "@utils/supabaseClient";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import SocialAuth from "@components/auth/SocialAuth";
 
 const initialValues = { email: "", password: "" };
 const validationSchema = Yup.object().shape({
@@ -126,47 +125,19 @@ function LoginPage() {
                                     </div>
                                     <span>تسجيل الدخول</span>
                                 </Button>
-                                {/* Social Login */}
-                                <div className="social-login mt-10">
-                                    {/* Divider */}
-                                    <div className="h-0.5 bg-grey"></div>
-                                    {/*  */}
-                                    <div className="relative z-10 mx-auto bg-white w-fit px-4 -translate-y-1/2">أو عبر المنصات الاجتماعية</div>
-                                    {/* Social Buttons */}
-                                    <div className="social-buttons mt-3">
-                                        {/* Google Button */}
-                                        <Button
-                                            type="button"
-                                            variant="ghostOutline"
-                                            title="المتابعة باستخدام جوجل"
-                                            aria-label="المتابعة باستخدام جوجل"
-                                            disabled={isSubmitting}
-                                            className="w-full"
+                                {/* Social Auth */}
+                                <SocialAuth className="mt-10" />
+                                {/* Form Footer */}
+                                <div className="form-footer mt-5">
+                                    <p className="text-center text-sm text-gray-600">
+                                        هل لديك حساب؟{" "}
+                                        <Link
+                                            to="/auth/signup"
+                                            className="text-primary font-semibold hover:underline"
                                         >
-                                            <img
-                                                src={GoogleImage}
-                                                alt="صورة جوجل"
-                                                className="w-5 h-5 inline-block ml-2"
-                                            />
-                                            <span>المتابعة باستخدام جوجل</span>
-                                        </Button>
-                                        {/* Apple Button */}
-                                        <Button
-                                            type="button"
-                                            variant="secondary"
-                                            title="المتابعة باستخدام أبل"
-                                            aria-label="المتابعة باستخدام أبل"
-                                            disabled={isSubmitting}
-                                            className="w-full mt-3"
-                                        >
-                                            <img
-                                                src={AppleImage}
-                                                alt="صورة أبل"
-                                                className="w-5 h-5 inline-block ml-2"
-                                            />
-                                            <span>المتابعة باستخدام أبل</span>
-                                        </Button>
-                                    </div>
+                                            سجل الآن
+                                        </Link>
+                                    </p>
                                 </div>
                             </form>
                         )}
