@@ -17,7 +17,7 @@ function Header() {
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-        <header className="py-4 bg-grey">
+        <header className="py-4 bg-grey/50 backdrop-blur-md sticky top-0 left-0 right-0 z-50">
             <div className="container flex items-center justify-between max-md:flex-wrap">
                 {/* App Logo */}
                 <AppLogo />
@@ -56,7 +56,7 @@ function Header() {
                         title={isOpen ? 'إغلاق' : 'فتح'}
                         aria-label={isOpen ? 'إغلاق' : 'فتح'}
                         onClick={() => setIsOpen(prev => !prev)}
-                        className={`text-2xl md:hidden${isOpen ? ' text-primary' : ''}`}
+                        className={`text-2xl md:hidden ${isOpen ? 'text-primary' : ''}`}
                     >
                         <FontAwesomeIcon icon={isOpen ? faXmark : faBars} />
                         <span className="sr-only">{isOpen ? 'إغلاق' : 'فتح'}</span>
