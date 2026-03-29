@@ -1,6 +1,7 @@
 import Footer from "@components/layout/Footer";
 import Header from "@components/layout/Header";
 import { Outlet } from "react-router-dom";
+import CTA from "@components/common/CTA";
 
 function MainLayout() {
     return (
@@ -9,6 +10,8 @@ function MainLayout() {
             <Header />
             {/* Outlet */}
             <Outlet />
+            {/* CTA */}
+            <CTA />
             {/* Footer */}
             <Footer />
         </div>

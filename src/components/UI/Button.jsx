@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
  * @typedef {CustomButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement> & import("react-router-dom").LinkProps} ButtonProps
  */
 
-function Button({ variant = "primary", to, href, type, className, children }) {
+function Button({ variant = "primary", to, href, type, className, children, ...props }) {
 
     const variants = {
         primary: "bg-primary text-white sm:hover:bg-primary/90",
@@ -29,6 +29,7 @@ function Button({ variant = "primary", to, href, type, className, children }) {
     if (href) {
         return (
             <a
+                {...props}
                 href={href}
                 className={classNames}
             >
@@ -41,6 +42,7 @@ function Button({ variant = "primary", to, href, type, className, children }) {
         return (
             <Link
                 to={to}
+                {...props}
                 className={classNames}
             >
                 {children}
@@ -50,6 +52,7 @@ function Button({ variant = "primary", to, href, type, className, children }) {
 
     return (
         <button
+            {...props}
             className={classNames}
             type={type || "button"}
         >

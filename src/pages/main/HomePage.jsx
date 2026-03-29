@@ -11,7 +11,6 @@ function HomePage() {
             <Features />
             <FeaturedProperties />
             <Testimonials />
-            <CTA />
         </div>
     )
 }
