@@ -24,8 +24,8 @@ function AboutHeader() {
             {/* Content Wrapper */}
             <div className="content-wrapper relative z-10 bg-secondary/30 h-full flex items-center py-20">
                 <div className="container text-center text-white">
-                    <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold">عقارات أحلامك في متناول يدك</h1>
-                    <p className="font-medium mt-5 sm:mt-10">نحن نعيد تعريف مفهوم التجربة العقارية الرقمية, حيث تلتفي التكنولوجيا المتطورة بالذوق الرفيع.</p>
+                    <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold">من نحن</h1>
+                    <p className="font-medium mt-5">نحن نعيد تعريف مفهوم التجربة العقارية الرقمية, حيث تلتفي التكنولوجيا المتطورة بالذوق الرفيع.</p>
                     <Button
                         onClick={handleExplore}
                         className="mt-5 flex items-center justify-center gap-2 mx-auto"
